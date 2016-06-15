@@ -14,10 +14,22 @@ Here are some bonus tasks to push your DOM knowledge!
 
 */
 
-function buttonClicked(event) {
 
-}
+var newButton = document.querySelector("#new-thing-button");
+var myList = document.querySelector("#my-list");
+var listItem = document.getElementsByClassName(".list-thing");
+var psuedoEl = document.querySelector(".list-thing::after");
+var deleteSpan = document.createElement('a').innerHtml = "<a>delete</a>";
 
-function addToList(list, text) {
 
-}
+newButton.addEventListener('click', function(event){
+    event.preventDefault();
+    var userInput = document.querySelector("#new-thing");
+    var newItem = document.createElement("li")
+    if (userInput.value !== "") {
+      newItem.innerText = userInput.value;
+      newItem.className = "list-thing";
+      myList.appendChild(newItem);
+      userInput.value = "";
+    }
+})

@@ -1,0 +1,6 @@
+.list-thing-selected::after {
+  content: "\274C";
+  font-size: 1em;
+  display: inline-block;
+  margin-left: 5px;
+}
