@@ -5,20 +5,33 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2>Todo list</h2>
-  <ul id="my-list">
-    <li class="list-thing">Take out trash</li>
-    <li class="list-thing">Clean Dishes</li>
-    <li class="list-thing">Dance!</li>
-  </ul>
 
-  <form>
-    <input id="new-thing" />
-    <input id="new-thing-button" type="submit" value="Create new thing"></submit>
-  </form>
-  <script src="main.js"></script>
-  <ul id="Archive">
-  </ul>
+  <div class= "active-list">
 
+
+    <h2>Todo list</h2>
+    <ul id="my-list">
+      <li class="list-thing">Take out trash</li>
+      <li class="list-thing">Clean Dishes</li>
+      <li class="list-thing">Dance!</li>
+    </ul>
+
+  </div>
+
+  <div class="entry-form">
+    <form>
+      <input id="new-thing" placeholder="type a thing"/>
+      <input id="new-thing-button" type="submit"  value="Create new thing"></submit>
+    </form>
+</div>
+
+  <div class="archive-list">
+    <h2>archive</h2>
+    <ul id="Archive">
+    </ul>
+  </div>
+
+    </div>
+<script src="main.js"></script>
 </body>
 </html>

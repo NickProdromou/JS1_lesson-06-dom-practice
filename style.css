@@ -1,6 +1,101 @@
-.list-thing-selected::after {
-  content: "\274C";
-  font-size: 1em;
+
+
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+h2 {
+  padding: 20px;
+  text-align: center;
+  font-weight: 200;
+  margin: 25px 0;
+  display: block;
+}
+
+ul {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  list-style-type: none;
+  font-weight: 300;
+}
+
+.options {
+  width: 145px;
+  font-size: .8em;
+  background: #eee;
+  padding: 5px;
+  border-radius: 5px;
+  position: absolute;
+  left: 145px;
+}
+
+.options p {
+  margin: 0 10px;
+  padding: 0px !important;
+}
+
+.options p, options button {
   display: inline-block;
-  margin-left: 5px;
+}
+
+.options button {
+  padding: 5px 15px;
+  font-size: .8em;
+  color: #fff;
+  background: #006f32;
+  border-radius: 10px;
+  border: 0;
+}
+
+.options button:hover {
+  background: #868668;
+  cursor: pointer;
+}
+
+.active-list {
+  background: #777;
+}
+
+.archive-list {
+  background: #006fb4;
+  height: 100px;
+}
+
+.entry-form {
+  background: green;
+  padding: 25px;
+  text-align: center;
+}
+
+.archived {
+  color: #666;
+}
+
+
+.list-thing {
+  padding: 15px;
+  background: #eee;
+  font-size: 0.8em;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  position: relative;
+}
+
+.list-thing li:hover {
+  cursor: pointer;
+}
+
+.active {
+  background: #a6ce39;
+}
+
+.active::after {
+  content: "click to archive this item";
+  font-size: .7em;
+  right: 20px;
+  position: absolute;
+  top: 19px;
 }

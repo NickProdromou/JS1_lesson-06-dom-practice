@@ -13,13 +13,19 @@ Here are some bonus tasks to push your DOM knowledge!
   - Instead of deleting it completely, move it to a second list called "Archive"
 
 */
+//DOM creations
+
+
+//DOM functions
+
 
 
 var newButton = document.querySelector("#new-thing-button");
 var myList = document.querySelector("#my-list");
-var listItem = document.getElementsByClassName(".list-thing");
 var psuedoEl = document.querySelector(".list-thing::after");
 var deleteSpan = document.createElement('a').innerHtml = "<a>delete</a>";
+var archived = document.querySelector("#Archive");
+
 
 
 newButton.addEventListener('click', function(event){
@@ -33,3 +39,69 @@ newButton.addEventListener('click', function(event){
       userInput.value = "";
     }
 })
+
+
+
+
+  //option box
+  var optionBox = document.createElement("div");
+  var boxButton = document.createElement("button");
+  optionBox.innerHTML = "<p>Options</p>";
+  optionBox.className = "options";
+  optionBox.appendChild(boxButton);
+  boxButton.innerText = "Archive";
+
+
+  appendTo = function(box,targetEl) {
+    targetEl.appendChild(box);
+  }
+
+//function to append
+
+
+
+var listItem = document.querySelectorAll(".list-thing");
+
+
+for(var i = 0; i < listItem.length; i++) {
+  var newButton = document.createElement("span");
+  newButton.innerText = "archive";
+  var currentVal = listItem[i].innerHTML;
+  currentVal += newButton;
+}
+
+
+for(var i = 0; i < listItem.length; i++) {
+
+    listItem[i].addEventListener('mouseover', function(){
+      console.log("hello world")
+        this.classList.toggle("active");
+        this.addEventListener('click',function(){
+          console.log("clicked me!")
+          appendTo(this,archived);
+          this.classList.remove("active");
+        })
+      });
+    }
+
+// for(var i = 0; i < listItem.length; i++) {
+//
+//     listItem[i].addEventListener('click', function(){
+//         appendTo(optionBox,this);
+//         var archiveButton = document.querySelector(".options button");
+//         var currentTask = this;
+//         archiveButton.addEventListener('click', function(){
+//           appendTo(currentTask,archived);
+//           if(currentTask.children[0].parentNode.className = "list-thing") {
+//           currentTask.className = "";
+//           currentTask.className = "archived";
+//         }
+//         if (document.querySelector(".options")) {
+//           console.log("fucking work");
+//           console.log(document.querySelector(".options").parentNode);
+//         }
+//
+//
+//       });
+//     })
+// }
