@@ -1,4 +1,6 @@
-
+/*
+  Global styles
+*/
 
 * {
   font-family: sans-serif;
@@ -9,7 +11,7 @@ h2 {
   padding: 20px;
   text-align: center;
   font-weight: 200;
-  margin: 25px 0;
+  margin: 0;
   display: block;
 }
 
@@ -21,38 +23,22 @@ ul {
   font-weight: 300;
 }
 
-.options {
-  width: 145px;
-  font-size: .8em;
-  background: #eee;
-  padding: 5px;
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+input{
+  padding: 5px 20px;
+  border: none;
   border-radius: 5px;
-  position: absolute;
-  left: 145px;
 }
 
-.options p {
-  margin: 0 10px;
-  padding: 0px !important;
-}
 
-.options p, options button {
-  display: inline-block;
-}
-
-.options button {
-  padding: 5px 15px;
-  font-size: .8em;
-  color: #fff;
-  background: #006f32;
-  border-radius: 10px;
-  border: 0;
-}
-
-.options button:hover {
-  background: #868668;
-  cursor: pointer;
-}
+/*
+  Page section styles
+*/
 
 .active-list {
   background: #777;
@@ -60,14 +46,17 @@ ul {
 
 .archive-list {
   background: #006fb4;
-  height: 100px;
 }
 
 .entry-form {
   background: green;
-  padding: 25px;
+  padding: 40px;
   text-align: center;
 }
+
+/*
+  Page elements styles
+*/
 
 .archived {
   color: #666;
@@ -85,11 +74,12 @@ ul {
 }
 
 .list-thing li:hover {
-  cursor: pointer;
+  cursor: pointer !important;
 }
 
 .active {
   background: #a6ce39;
+  box-shadow: 4px 3px 5px rgba(0,0,0,.6);
 }
 
 .active::after {
@@ -98,4 +88,8 @@ ul {
   right: 20px;
   position: absolute;
   top: 19px;
+}
+
+#new-thing {
+  width: 65%;
 }
