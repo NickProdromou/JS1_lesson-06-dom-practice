@@ -1,5 +1,5 @@
 
-//Varibles
+//Variables
 var newButton = document.querySelector("#new-thing-button");
 var myList = document.querySelector("#my-list");
 var archived = document.querySelector("#Archive");
@@ -9,7 +9,7 @@ var activeCount = document.querySelector("#counter");
 
 
 //functions
-appendTo = function(box,targetEl) {
+function appendTo(box,targetEl) {
   targetEl.appendChild(box);
 }
 
@@ -21,26 +21,57 @@ function getCurrentCount() {
 
 function watchItems() {
 
-for(var i = 0; i < myList.children.length; i++) {
+  for(var i = 0; i < myList.children.length; i++) {
 
-    //mouseover handler
-    myList.children[i].addEventListener('mouseover', function(){
-        this.classList.add("active");
-        //mouseout handler
-        this.addEventListener('mouseout', function(){
-          this.classList.remove("active");
-        })
-        //click hanlder
-        this.addEventListener('click',function(){
-          appendTo(this,archived);
-          this.classList.add("archived");
-          this.classList.remove("list-thing");
-          getCurrentCount();
-        })
-      });
-    }
+      //mouseover handler
+      // myList.children[i].addEventListener('mouseover', function(){
+      //     this.classList.add("active");
+      //     //mouseout handler
+      //     this.addEventListener('mouseout', function(){
+      //       this.classList.remove("active");
+      //     })
+      //     //click hanlder
+      //     this.addEventListener('click',function(){
+      //       appendTo(this,archived);
+      //       this.classList.add("archived");
+      //       this.classList.remove("list-thing");
+      //       getCurrentCount();
+      //       checkArchive();
+      //     })
+      //   });
+      // }
+      myList.children[i].addEventListener('mouseover', function(){
+          this.classList.add("active");
+          console.log("mouse on event")
+          });//mouseout handler
+          myList.children[i].addEventListener('mouseout', function(){
+            this.classList.remove("active");
+            console.log("mouse off event")
+          });
+          //click hanlder
+          myList.children[i].addEventListener('click',function(){
+            appendTo(this,archived);
+            this.classList.add("archived");
+            this.classList.remove("list-thing");
+            getCurrentCount();
+            checkArchive();
+            console.log("click event")
+          });
+
+      }
 }
 
+//functions
+function checkArchive(){
+  for(var i = 0; i < archived.children.length; i++) {
+      archived.children[i].addEventListener('mouseover', function(){
+          this.classList.remove("active");
+        });
+      }
+}
+
+
+//Event Listeners
 
 newButton.addEventListener('click', function(event){
     event.preventDefault();
@@ -54,9 +85,11 @@ newButton.addEventListener('click', function(event){
       newItem.classList.remove("active");
       watchItems();
       getCurrentCount();
+      checkArchive();
     }
 })
 
-
+//calling functions
 watchItems();
 getCurrentCount();
+checkArchive();
