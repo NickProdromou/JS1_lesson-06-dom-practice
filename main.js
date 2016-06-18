@@ -19,28 +19,11 @@ var newButton = document.querySelector("#new-thing-button");
 var myList = document.querySelector("#my-list");
 var archived = document.querySelector("#Archive");
 var listItem = document.querySelectorAll(".list-thing");
-var allItems = document.querySelector("li");
 
 //functions
 appendTo = function(box,targetEl) {
   targetEl.appendChild(box);
 }
-
-
-
-newButton.addEventListener('click', function(event){
-    event.preventDefault();
-    var userInput = document.querySelector("#new-thing");
-    var newItem = document.createElement("li")
-    if (userInput.value !== "") {
-      newItem.innerText = userInput.value;
-      newItem.className = "list-thing";
-      myList.appendChild(newItem);
-      userInput.value = "";
-      newItem.classList.remove("active");
-      watchItems();
-    }
-})
 
 function watchItems() {
 for(var i = 0; i < myList.children.length; i++) {
@@ -58,4 +41,21 @@ for(var i = 0; i < myList.children.length; i++) {
       });
     }
 }
+
+
+newButton.addEventListener('click', function(event){
+    event.preventDefault();
+    var userInput = document.querySelector("#new-thing");
+    var newItem = document.createElement("li")
+    if (userInput.value !== "") {
+      newItem.innerText = userInput.value;
+      newItem.className = "list-thing";
+      myList.appendChild(newItem);
+      userInput.value = "";
+      newItem.classList.remove("active");
+      watchItems();
+    }
+})
+
+
 watchItems();
