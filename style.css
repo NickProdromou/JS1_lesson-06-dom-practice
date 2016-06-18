@@ -73,7 +73,7 @@ input{
   position: relative;
 }
 
-.list-thing li:hover {
+li.list-thing:hover {
   cursor: pointer !important;
 }
 

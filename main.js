@@ -19,6 +19,7 @@ var newButton = document.querySelector("#new-thing-button");
 var myList = document.querySelector("#my-list");
 var archived = document.querySelector("#Archive");
 var listItem = document.querySelectorAll(".list-thing");
+var allItems = document.querySelector("li");
 
 //functions
 appendTo = function(box,targetEl) {
@@ -36,6 +37,7 @@ newButton.addEventListener('click', function(event){
       newItem.className = "list-thing";
       myList.appendChild(newItem);
       userInput.value = "";
+      newItem.classList.remove("active");
       watchItems();
     }
 })
@@ -44,13 +46,14 @@ function watchItems() {
 for(var i = 0; i < myList.children.length; i++) {
 
     myList.children[i].addEventListener('mouseover', function(){
-      console.log("hello world")
-        this.classList.toggle("active");
+        this.classList.add("active");
         this.addEventListener('click',function(){
-          console.log("clicked me!")
           appendTo(this,archived);
+          this.classList.add("archived");
+        })
+        this.addEventListener('mouseout', function(){
+          console.log("mouse-left")
           this.classList.remove("active");
-
         })
       });
     }
