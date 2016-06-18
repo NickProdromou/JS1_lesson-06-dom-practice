@@ -5,34 +5,50 @@
   <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="site">
+
+<div class="site-content">
+
+  <header>
+    <h2 class="wrapper">To<strong>Do</strong> list</h2>
+  </header>
 
   <div class= "active-list">
-
-
-    <h2>Todo list</h2>
-    <ul id="my-list">
-      <li class="list-thing">Take out trash</li>
-      <li class="list-thing">Clean Dishes</li>
-      <li class="list-thing">Dance!</li>
-    </ul>
-
+    <div class="wrapper">
+      <p id="activeCount">Active items<span id ="counter"></span></p>
+      <ul id="my-list" >
+        <li class="list-thing">Take out trash</li>
+        <li class="list-thing">Clean Dishes</li>
+        <li class="list-thing">Dance!</li>
+      </ul>
   </div>
-
-  <div class="entry-form">
-    <form>
-      <input id="new-thing" placeholder="type a thing"/>
-      <input id="new-thing-button" type="submit"  value="Create new thing"></submit>
-    </form>
 </div>
 
-  <div class="archive-list">
-    <h2>archive</h2>
-    <ul id="Archive">
-    </ul>
+  <div class="entry-form">
+    <div class="wrapper">
+        <h2>Add a new task</h2>
+        <form>
+          <input id="new-thing" placeholder="type a thing"/>
+          <input id="new-thing-button" type="submit"  value="Create new thing"></submit>
+        </form>
+    </div>
   </div>
 
+  <div class="archive-list">
+    <div class="wrapper">
+      <h2>archive</h2>
+      <ul id="Archive" class="wrapper">
+      </ul>
     </div>
+  </div>
+
+
+</div>
+
+<footer>
+  <p>A site by a cool guy</p>
+</footer>
+
 <script src="main.js"></script>
 </body>
 </html>

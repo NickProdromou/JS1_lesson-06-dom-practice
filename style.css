@@ -2,13 +2,23 @@
   Global styles
 */
 
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background: #727272;
+}
+
+.site-content {
+  flex: 1;
+}
+
 * {
   font-family: sans-serif;
   box-sizing: border-box;
 }
 
 h2 {
-  padding: 20px;
   text-align: center;
   font-weight: 200;
   margin: 0;
@@ -35,37 +45,74 @@ input{
   border-radius: 5px;
 }
 
+.wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+  list-style-type: none;
+  font-weight: 300;
+}
 
 /*
   Page section styles
 */
+
+header {
+  background: #000;
+  color: #fff;
+}
 
 .active-list {
   background: #777;
 }
 
 .archive-list {
-  background: #006fb4;
+  background: #727272;
 }
 
 .entry-form {
-  background: green;
+  background: #455A64;
   padding: 40px;
   text-align: center;
 }
+
+footer {
+  background: #212121;
+  padding: 20px 0;
+  font-size: .8em;
+  color:#888;
+  text-align: center;
+}
+
 
 /*
   Page elements styles
 */
 
+
+
+#new-thing-button {
+  background:#448AFF;
+  color: #fff;
+  font-size: 1em;
+  font-weight: 300;
+}
+
 .archived {
   color: #666;
+  padding: 15px;
+  background: #CFD8DC;
+  font-size: 0.8em;
+  width: 100%;
+  margin: 10px 0;
+  border-radius: 5px;
+  position: relative;
 }
 
 
 .list-thing {
   padding: 15px;
-  background: #eee;
+  background: #CFD8DC;
   font-size: 0.8em;
   width: 100%;
   margin: 10px 0;
@@ -78,7 +125,7 @@ li.list-thing:hover {
 }
 
 .active {
-  background: #a6ce39;
+  background: #448AFF;
   box-shadow: 4px 3px 5px rgba(0,0,0,.6);
 }
 
@@ -90,6 +137,9 @@ li.list-thing:hover {
   top: 19px;
 }
 
-#new-thing {
-  width: 65%;
+@media (max-width: 505px) {
+  input {
+    width: 100%;
+    border-radius: 0px;
+  }
 }
